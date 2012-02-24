@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Getting Started with Front_end</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="Caleb Troughton">
+	<meta name="keywords" content="Caleb Troughton">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="../core/deck.core.css">
+	<link rel="stylesheet" href="../extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="../extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="../extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="../extensions/status/deck.status.css">
+	<link rel="stylesheet" href="../extensions/hash/deck.hash.css">
+	
+	<!-- Theme CSS files (menu swaps these out) -->
+	<link rel="stylesheet" id="style-theme-link" href="../themes/style/neon.css">
+	<link rel="stylesheet" id="transition-theme-link" href="../themes/transition/horizontal-slide.css">
+	
+	<!-- Custom CSS just for this page -->
+	<link rel="stylesheet" href="introduction.css">
+	
+	<script src="../modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<div class="theme-menu">
+	<h2>Themes</h2>	
+	
+	<label for="style-themes">Style:</label>
+	<select id="style-themes">
+		<option selected value="../themes/style/web-2.0.css">Web 2.0</option>
+		<option value="../themes/style/swiss.css">Swiss</option>
+		<option value="../themes/style/neon.css">Neon</option>
+		<option value="">None</option>
+	</select>
+	
+	<label for="transition-themes">Transition:</label>
+	<select id="transition-themes">
+		<option selected value="../themes/transition/horizontal-slide.css">Horizontal Slide</option>
+		<option value="../themes/transition/vertical-slide.css">Vertical Slide</option>
+		<option value="../themes/transition/fade.css">Fade</option>
+		<option value="">None</option>
+	</select>
+</div>
+
+<section class="slide" id="title-slide">
+<h1>XHTML&nbsp;&nbsp;+&nbsp;&nbsp;CSS<p>@李典</p></h1>
+</section>
+
+<section class="slide" id="how-to-overview">
+	<h2>XHTML入门</h2>
+	<ol>
+		<li>
+            <h3><a href="#what_is_xhtml">什么是XHTML</a></h3>
+		</li>
+		<li>
+            <h3><a href="#xhtml_structure">XHTML文件的结构</a></h3>
+		</li>
+		<li>
+            <h3><a href="#normal_tag">XHTML常用标记</a></h3>
+            <ul>
+            	<li>头元素中的标记</li>
+            	<li>文档内容基本标记</li>
+            	<li>列表</li>
+            	<li>链接</li>
+            	<li>图像</li>
+            	<li>表格</li>
+            	<li>表单</li>
+            </ul>
+		</li>
+        <li>
+			<h3>作业</h3>
+		</li>
+	</ol>
+</section>
+
+<section id="what_is_xhtml" class="slide">
+    <h2>什么是XHTML</h2>
+    <ul>
+    	<li><p>XHTML 是 The Extensible HyperText Markup Language 可扩展超文本置标语言的缩写</p></li>
+        <li><p>XML 虽然数据格式化能力强大，完全可以替代 HTML，但面对以千万计算的已有的网站，全面采用 XML 阻力过大</p></li>
+        <li>
+            <p>因此，我们在 HTML 4.01 的基础上，用 XML 的规则对 HTML 重新定义，就得到了 XHTML</p>
+            <img src="../images/web/what_xhtml.png" alt="what_xhtml" />
+        </li>
+    </ul>
+    <h2>XHTML 的思想</h2>
+    <ul>
+        <li>
+            <h3>简单地用 XML 的语法对 HTML4 进行改写：</h3>
+            <ul>
+                <li>利用 DTD 对语法进行规定</li>
+                <li>标记名称统一为小写</li>
+                <li>标记属性改用小写</li>
+                <li>属性值用引号括起来</li>
+                <li>标记必须配对</li>
+                <li>img, br 和 meta 这样的标记带斜杠自关闭</li>
+                <li>……</li>
+            </ul>
+        </li>
+        <li>
+            <h3>具有严格的 XML 语法，更规范，易于学习和上手</h3>
+        </li>
+    </ul>
+    <h2>XHTML 的特点</h2>
+    <ul>
+        <li>XHTML 具有 XML 的一切特点</li>
+        <li>同时又保留了 HTML 的优越性</li>
+        <li>提供了良好的可伸缩性，可大可小</li>
+        <li>可大：能够自定义标记</li>
+        <li>可小：HTML 有90多个标记，XHTML 可以根据客户端设备的不同决定支持哪些标记</li>
+    </ul>
+    <h2>注意</h2>
+    <h3>所谓 XHTML 就是用 XML 重新定义的 HTML</h3>
+    <p>    用原来 HTML 的标记名作为 XML 里的标记</p>
+
+    <h3>XHTML 还是 XML!</h3>
+    <p>一个 XHTML 文档也是有效的 XML 文档</p>
+    <p>只不过长得很像 HTML~</p>
+
+    <h3>XHTML 的作用在于定义文档的整体结构，而不是定义显示细节</h3>
+    <p>它是结构层技术</p>
+    <p>因此你写的 XHTML 文件可能看起来很丑</p>
+
+    <p>建立 XHTML 的目的就是实现 HTML 向 XML 的平稳过渡</p>
+
+    <h2>XHTML 的版本</h2>
+    <h3>XHTML 1.0 (2000)</h3>
+    <p>http://www.w3.org/TR/xhtml1</p>
+    <h3>XHTML 1.1 (2001)</h3>
+    <p>兼容 1.0，小幅改变</p>
+
+    <h3>目前推荐遵循的是 W3C 正式通过的 XHTML 1.0 以及 XHTML 1.1 标准</h3>
+
+    <h2>未来的标记语言</h2>
+    <h3>XHTML 2 (Draft)</h3>
+
+    <p>语法不兼容 XHTML 1.x 和 HTML，改动较大</p>
+
+    <p>W3C 比较激进的改革尝试，事实证明接受度太低。W3C 决定集中力量发展 HTML 5，今年年底工作组解散</p>
+
+    <h3>HTML 5 (Draft)</h3>
+    <p>2004 年由 WHATWG 提出，于 2007 年被 W3C接纳，并成立了新的 HTML 工作团队</p>
+
+    <p>HTML 5 支持传统的 HTML 语法，也支持 XML 的语法</p>
+
+    <p>使用 XML 语法书写时也称为 XHTML5</p>
+</section>
+<section id="xhtml_structure" class="slide">
+    <h2>XHTML 文件的基本结构</h2>
+    <h3>XHTML 文件的基本组成</h3>
+    <h4>标记</h4>
+    <p>&lt;tag&gt;</p>
+    <h4>空标记 (自关闭)</h4>
+    <p>&lt;EmptyTag /&gt;，比如： &lt;br /&gt;</p>
+    <h4>属性</h4>
+    <p>&lt;tag attribute="value"&gt;Hello&lt;/tag&gt;</p>
+    <h4>元素</h4>
+    <p>&lt;tag&gt; Content &lt;/tag&gt;</p>
+    <h3>结构</h3>
+    <ul>
+        <li>XML 声明</li>
+        <li>文档类型定义</li>
+        <li>文件体：</li>
+        <li>根元素 html</li>
+        <li>头元素 head</li>
+        <li>标题元素 title</li>
+        <li>主体元素 body</li>
+    </ul>
+    <img src="../images/web/xhtml_struct.png" alt="XHTML文件基本结构" title="" />
+    <h3>XML 声明</h3>
+    <p>虽然看起来加上XML声明是个比较好的做法，但现阶段由于一些浏览器软件的不完善，<a href="#">建议不要加上XML声明</a></p>
+    <p>主要是 IE6，加上XML 声明，浏览器会采用Quirks Mode 工作 (非正常工作模式)，造成页面显示问题</p>
+    <h3>文档类型定义</h3>
+    <p>DOCTYPE 声明必须放在每一个 XHTML 文档最顶部，在所有数据和标记之上（在 XML 声明之下） </p>
+    <p>XHTML 文件的 DOCTYPE 声明是必须的！</p>
+    <p>回顾引用公共 DTD 的形式：</p>
+    <p>&lt;!DOCTYPE 根元素 PUBLIC "DTD 名称" "外部 DTD 的URL"&gt;</p>
+    <h3>XHTML 1.0 的三种文档类型</h3>
+    <h3>XHTML 1.0 提供了三种 DTD 声明可供选择：</h3>
+    <h3>Transitional</h3>
+    <p>要求比较宽松的 DTD，它允许你继续使用 HTML 4.01 中的标记 (但是要符合 XHTML 的写法)</p>
+    <ul>
+        <li>方便原来使用 HTML 的设计师过渡到 XHTML</li>
+        <li>可以方便地将原先的 HTML 文档转换成符合 XHTML 的文档</li>
+        <li>对于我们新时代的开发者，基本可以忘掉</li>
+        <li>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</li>
+    </ul>
+    <h3>Frameset</h3>
+    <p>专门针对框架页面设计使用的 DTD (不推荐使用)</p>
+    <ul>
+        <li>文档中要用到框架(Frameset)结构时使用</li>
+        <li>现代网页设计不推荐使用框架！</li>
+        <li>可以直接忘掉～</li>
+        <li>&li;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"&gt;</li>
+    </ul>
+    <h3>Strict</h3>
+    <p>要求严格的 DTD，不能使用任何表示信息样式的标识和属性，如居中 &lt;center&gt;</p>
+    <ul>
+        <li>与 XHTML 1.1 非常接近，推荐使用</li>
+        <li>要求严格，不能使用任何 &lt;center&gt; 这样的标识和属性</li>
+        <li>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</li>
+        <li>
+        <ul>
+            <li>在Strict声明下不能使用的标签</li>
+            <li>center </li>
+            <li>font </li>
+            <li>iframe </li>
+            <li>strike </li>
+            <li>u</li>
+            <li>applet</li>
+            <li>……</li>
+        </ul>
+        </li>
+    </ul>
+    <h2>加上 DOCTYPE 的好处</h2>
+    <h3>让网页以你期待的方式显示</h3>
+    <p>以Standards Mode显示，而不是 Quirks Mode</p>
+    <h3>让你的网页显示得更快！</h3>
+    <p>Standards Mode渲染速度要比 Quirks Mode 快</p>
+    <h2>W3C Validation Service</h2>
+    <p>验证一个文档的结构是否符合规范</p>
+    <a href="http://validator.w3.org" target="_blank">http://validator.w3.org</a>
+</section>
+<section id="normal_tag" class="slide">
+    <h2>XHTML常用的标记</h2>
+    <h3>头元素中的标记</h3>
+<ul>
+<li>&lt;title&gt;文档标题</li>
+<li>&lt;base&gt;文档的基础URL</li>
+<li>&lt;link&gt; 定义文档与其他文档的关系</li>
+<li>&lt;meta&gt;定义文档的附加描述信息</li>
+<li>&lt;script&gt;定义文档用的脚本链接，如Javascript</li>
+<li>&lt;style&gt;定义文档用到的样式表链接，如CSS</li>
+</ul>
+<h3>基本标记 Basic Tags</h3>
+<p>&lt;h1&gt; to &lt;h6&gt;：标题一到标题六</p>
+<p>&lt;p&gt;：段落</p>
+
+<p>&lt;br /&gt;：换行</p>
+<p>&lt;hr /&gt;：水平线</p>
+<p>&lt;br /&gt; 这个方法已经严重被滥用来划分段落，它不应该使用在预计分段的两段文本中。是什么结构，该用什么标记就用什么标记，不是为断行而分段或者为分段而断行因为没有任何东西在换行标记之间，所以没有闭合标记，它是用“/”在br后自闭合的</p>
+<h3>列表 Lists</h3>
+<h4>有序列表</h4>
+<p>&lt;ol&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;The Fellowship of the Rings&lt;/li&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;The Two Towers&lt;/li&gt;</p>
+<p>&lt;li&gt;The Return of the King&lt;/li&gt;</p>
+<p>&lt;/ol&gt;</p>
+<ol>
+    <li>The Fellowship of the Rings</li>
+    <li>The Two Towers</li>
+    <li>The Return of the King</li>
+</ol>
+<h4>无序列表</h4>
+<p>&lt;ul&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;The Fellowship of the Rings&lt;/li&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;The Two Towers&lt;/li&gt;</p>
+<p>&lt;li&gt;The Return of the King&lt;/li&gt;</p>
+<p>&lt;/ul&gt;</p>
+<ul>
+    <li>Soccer</li>
+    <li>Basketball</li>
+    <li>Shuttlecock</li>
+</ul>
+<h4>定义列表</h4>
+<p>用于建立术语表</p>
+<p>用&lt;dl&gt;元素建立列表，表内用dt元素标记术语，用dd元素标记术语的解释，一个dt可以跟随多个dd</p>
+<p>&lt;dl&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;Term 1&lt;/dt&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;Definition 1&lt;/dd&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;dt&gt;Term 2&lt;/dt&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;Definition 2-1&lt;/dd&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;Definition 2-2&lt;/dd&gt;</p>
+<p>&lt;/dl&gt;</p>
+<dl>
+    <dt>Term 1</dt>
+    <dd>Definition 1</dd>
+    <dt>Term 2</dt>
+    <dd>Definition 2-1</dd>
+    <dd>Definition 2-2</dd>
+</dl>
+<p>列表可嵌套</p>
+<h4>超链接 Hypertext Link</h4>
+<ul>
+	<li>锚链接</li>
+	<li>绝对路径</li>
+	<li>相对路径</li>
+</ul>
+<h4>图像 Image</h4>
+<p>
+	&lt;img src="" alt="" /&gt;
+</p>
+<p>注意：src属性不能少</p>
+<h4>table</h4>
+<p>table 元素定义标记</p>
+<p>tr 元素定义表格中的一行</p>
+<p>th 表头</p>
+<p>td 元素定义数据单元格</p>
+<p>单元格跨越 Cell Span</p>
+<p>colspan 属性，意即“列跨越”，在列的方向上将会跨越指定数目的单元格</p>
+<p>rowspan 属性，意即 “行跨越”</p>
+<h4>form表单</h4>
+<h4>input 标记</h4>
+<ul>
+    <li>
+    文本框 text
+    <input name="" type="text" />
+    </li>
+<li>密码框 password<input name="" type="password" /></li>
+<li>提交按钮 submit 与重置按钮 reset<input name="" type="submit" /><input name="" type="reset" /></li>
+<li>隐含框 hidden<input name="" type="hidden" /></li>
+<li>文件选择输入框 file<input name="" type="file" /></li>
+<li>单选框 radio<input name="" type="radio" /></li>
+<li>复选框 checkbox<input name="" type="checkbox" /></li>
+<li>图像按钮 image<input name="" type="image" /></li>
+<li>按钮 button<input name="" type="button" /></li>
+</ul>
+<h4>textarea</h4>
+<textarea name="" rows="10" cols="30"></textarea>
+<h4>select 和 option</h4>
+<select name="">
+	<option value="0">这是个option啊</option>
+	<option value="1">真的吗</option>
+	<option value="2">真的</option>
+</select>
+<h2>小练习</h2>
+<a href="http://www.w3school.com.cn/xhtml/xhtml_intro.asp">http://www.w3school.com.cn/xhtml/xhtml_intro.asp</a>
+
+
+</section>
+
+<section class="slide" id="what">
+	<h2>什么是切图？</h2>
+    <h3>设计稿</h3>
+    <img src="../images/web/design_content.jpg" alt="某项目设计文档目录结构" title="某项目设计文档目录结构" />
+    <p>仅仅从切图的角度出发，这些文档对我们来说最有用的是<a href="#">psd文件</a></p>
+    <h3>项目开发的流程</h3>
+    <p>需求分析 ===> 概要设计 ===> 详细设计 ===> 编码 ===> 测试</p>
+    <h3>CSS spirites</h3>
+    <img src="../images/web/icon.png" alt="图标" />
+    <img src="../images/web/c_b_bg.png" alt="sprite" />
+</section>
+
+<section class="slide" id="why">
+	<h2>为什么要切图？</h2>
+    <h3>取其精华，去其糟粕</h3>
+</section>
+
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="number" name="slidenum" id="goto-slide">
+	<input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>-->
+  <script>window.jQuery || document.write('<script src="../jquery-1.6.4.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="../core/deck.core.js"></script>
+<script src="../extensions/menu/deck.menu.js"></script>
+<script src="../extensions/goto/deck.goto.js"></script>
+<script src="../extensions/status/deck.status.js"></script>
+<script src="../extensions/navigation/deck.navigation.js"></script>
+<script src="../extensions/hash/deck.hash.js"></script>
+
+<!-- Specific to this page -->
+<script src="introduction.js"></script>
+
+</body>
+</html>
